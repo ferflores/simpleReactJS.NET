@@ -1,0 +1,7 @@
+.suo
+config
+/SimpleReactJS.NET/bin
+/SimpleReactJS.NET/obj/Debug
+/packages/Microsoft.AspNet.Razor.3.2.3/*.nupkg
+
+/packages
