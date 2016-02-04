@@ -1,7 +1,7 @@
 ﻿using System.Web.Optimization;
 using System.Web.Optimization.React;
 
-namespace SimpleReactJS.NET.App_Start
+namespace SimpleReactJS.NET
 {
 	public class BundleConfig
 	{
