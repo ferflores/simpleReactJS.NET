@@ -4,7 +4,7 @@ class Controls extends React.Component {
 		return (
 			<div className="row alert alert-info">
 				< AddTodo />
-				< SearchTodo />
+				< FilterTodo />
 			</div>
 		)
 	}

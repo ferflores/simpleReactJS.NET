@@ -1,20 +1,27 @@
 ﻿
-let todos = [
-	{ date: '27 Nov', text: 'MTY .NET Meetup' },
-	{ date: '28 Nov', text: 'Javascript Meetup' }
-];
-
 class TodoList extends React.Component {
 
+	componentWillMount() {
+		this.setState({ todos: [] });
+		this.loadTodos();
+	}
+
+	loadTodos() {
+		setInterval(() => {
+			$.get("/Home/GetTodos", (todos) => {
+				this.setState({ todos: todos });
+			});
+		}, 1000);
+	}
+
 	render() {
+		let todos = this.state.todos.map(todo => {
+			return < Todo id={todo.Id} date={todo.Date} text={todo.Text} />
+		});
+
 		return (
-			
 			<div className="row">
-				{
-					todos.map(todo => {
-						return < Todo date={todo.date} text={todo.text} />
-					})
-				}
+				{todos}
 			</div>
 			)
 	}
